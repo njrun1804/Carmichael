@@ -8,7 +8,7 @@ const categories = [
 
 export default function CategoryGrid() {
   return (
-    <section className="mx-auto grid max-w-7xl gap-6 px-4 py-16 md:grid-cols-3">
+    <section className="fade-in mx-auto grid max-w-7xl gap-6 px-4 py-16 md:grid-cols-3">
       {categories.map(({ href, label, img }) => (
         <Link
           key={label}
