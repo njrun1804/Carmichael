@@ -28,7 +28,7 @@ export default function Header() {
           <Link href="/contact" className="hover:text-blue-600">Contact</Link>
         </nav>
 
-        <button className="md:hidden">☰</button>
+        <button className="md:hidden" aria-label="Open menu">☰</button>
       </div>
     </header>
   );
