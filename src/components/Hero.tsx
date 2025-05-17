@@ -1,8 +1,15 @@
 import Link from "next/link";
 
-// NOTE: Define the following in your globals.css or tailwind.config.css for the fade‑in effect:
-// @keyframes fade-in { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
-// .fade-in { animation: fade-in 0.8s ease-out both; }
+/**
+ * NOTE: Add the following to your global styles (e.g., `globals.css`) for the fade‑in effect:
+ *
+ * @keyframes fade-in {
+ *   from { opacity: 0; transform: translateY(20px); }
+ *   to   { opacity: 1; transform: translateY(0); }
+ * }
+ *
+ * .fade-in { animation: fade-in 0.8s ease-out both; }
+ */
 
 export default function Hero() {
   return (
@@ -10,17 +17,17 @@ export default function Hero() {
       {/* Background image */}
       <img
         src="/hero-lifestyle.jpg"
-        alt="Car and patio set protected by custom-fit covers"
+        alt="Car and patio set protected by custom‑fit covers"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 
       {/* Content overlay with fade‑in animation */}
       <div className="fade-in flex flex-col items-center gap-6 text-center">
         <h1 className="text-4xl font-extrabold text-white md:text-6xl">
-          Premium&nbsp;Custom-Fit&nbsp;Covers
+          Premium&nbsp;Custom‑Fit&nbsp;Covers
         </h1>
         <p className="max-w-xl text-lg text-white/90">
-          Protect your car, grill, or patio set with precision-tailored covers that look great and last.
+          Protect your car, grill, or patio set with precision‑tailored covers that look great and last.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
