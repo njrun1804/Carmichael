@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const categories = [
   { href: "/car",   label: "Car Covers",   img: "/placeholder-car.jpg" },
@@ -16,11 +17,14 @@ export default function CategoryGrid() {
           className="group relative overflow-hidden rounded-xl shadow transition transform hover:-translate-y-1 hover:shadow-lg"
         >
           {/* Image */}
-          <img
-            src={img}
-            alt={label}
-            className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
+          <div className="relative h-56 w-full">
+            <Image
+              src={img}
+              alt={label}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
 
           {/* Overlay label */}
           <span className="absolute inset-0 flex items-end justify-center bg-black/50 p-4 text-xl font-semibold text-white">
