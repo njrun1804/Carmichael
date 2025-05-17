@@ -11,7 +11,7 @@ export default function Hero() {
       />
 
       {/* Content overlay */}
-      <div className="flex flex-col items-center gap-6 text-center">
+      <div className="flex flex-col items-center gap-6 text-center bg-black/40 p-6 rounded-xl">
         <h1 className="text-4xl font-extrabold text-white md:text-6xl">
           Premium&nbsp;Custom‑Fit&nbsp;Covers
         </h1>
