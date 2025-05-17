@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:offline": "echo ⚠️  Skipping ESLint – run 'npm install' when dependencies are available"
   },
   "dependencies": {
     "react": "^19.0.0",
