@@ -29,7 +29,7 @@ You can start editing the main page by modifying `src/app/page.tsx`. The page au
 
 ## Styling
 
-Styles are built with Tailwind CSS and processed by PostCSS. The [`postcss.config.js`](./postcss.config.js) file loads the `@tailwindcss/postcss` plugin along with `autoprefixer`, so vendor prefixes are automatically applied where needed.
+Styles are built with Tailwind CSS and processed by PostCSS. The [`postcss.config.js`](./postcss.config.js) file loads the `tailwindcss` plugin along with `autoprefixer`, so vendor prefixes are automatically applied where needed.
 
 ## Learn More
 
