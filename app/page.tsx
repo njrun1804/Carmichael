@@ -50,7 +50,28 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        // Big hero banner with headline "Premium Custom-Fit Covers"  
+        <section className="w-full bg-gray-100 py-24 flex flex-col items-center text-center gap-6">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
+            Premium&nbsp;Custom-Fit&nbsp;Covers
+          </h1>
+          <p className="max-w-xl text-lg sm:text-xl text-gray-600">
+            Protect your car, grill, or patio set with precision-tailored covers that look great and last.
+          </p>
+          <div className="flex gap-4">
+            <a
+              href="/car"
+              className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
+            >
+              Shop Car Covers
+            </a>
+            <a
+              href="/grill"
+              className="border border-black px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
+            >
+              Shop Grill Covers
+            </a>
+          </div>
+        </section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
