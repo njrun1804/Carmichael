@@ -8,9 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "13.x",
+    "react": "18.x",
+    "react-dom": "18.x"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.7",
