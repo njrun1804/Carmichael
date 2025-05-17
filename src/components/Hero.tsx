@@ -16,7 +16,7 @@ export default function Hero() {
     <section className="relative flex h-[60vh] w-full items-center justify-center overflow-hidden">
       {/* Background image */}
       <img
-        src="/hero-lifestyle.jpg"
+        src="/hero-lifestyle.png"
         alt="Car and patio set protected by custom‑fit covers"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
