@@ -1,8 +1,23 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [shadow, setShadow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShadow(window.scrollY > 0);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full border-b bg-white">
+    <header className={`w-full bg-white transition-shadow ${shadow ? "shadow" : "border-b"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
         <Link href="/" className="text-xl font-bold">CoverCo</Link>
 
