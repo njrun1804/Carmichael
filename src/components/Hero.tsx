@@ -1,17 +1,28 @@
 import Link from "next/link";
 
+/**
+ * NOTE: Make sure you have the `fade-in` keyframes and utility class in your global styles (e.g., `globals.css`):
+ *
+ * @keyframes fade-in {
+ *   from { opacity: 0; transform: translateY(20px); }
+ *   to   { opacity: 1; transform: translateY(0); }
+ * }
+ *
+ * .fade-in { animation: fade-in 0.8s ease-out both; }
+ */
+
 export default function Hero() {
   return (
     <section className="relative flex h-[60vh] w-full items-center justify-center overflow-hidden">
       {/* Background image */}
       <img
         src="/hero-lifestyle.jpg"
-        alt="Covered car and patio set, showcasing product use in lifestyle setting"
+        alt="Car and patio set protected by custom‑fit covers"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 
-      {/* Content overlay */}
-      <div className="flex flex-col items-center gap-6 text-center bg-black/40 p-6 rounded-xl">
+      {/* Content overlay with fade‑in and readability styles */}
+      <div className="fade-in flex flex-col items-center gap-6 text-center bg-black/40 p-6 rounded-xl">
         <h1 className="text-4xl font-extrabold text-white md:text-6xl">
           Premium&nbsp;Custom‑Fit&nbsp;Covers
         </h1>
