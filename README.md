@@ -4,9 +4,9 @@ Carmichael is a simple web application built with [Next.js](https://nextjs.org),
 
 ## Features
 
-* **Next.js App Router** structure
-* **TypeScript** configuration
-* **Tailwind CSS** styling
+- **Next.js App Router** structure
+- **TypeScript** configuration
+- **Tailwind CSS** styling
 
 ## Getting Started
 
@@ -17,22 +17,19 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site in your browser.
+Open <http://localhost:3000> to view the site in your browser.
 
-You can begin editing the UI by modifying files under `app/` or `src/`. The page updates automatically as you edit the code.
+You can start editing the main page by modifying `src/app/page.tsx`. The page auto‑updates as you edit the file, and you can create additional routes under the `app/` or `src/` directories.
 
 ## Available Scripts
 
-* `npm run dev` – Run the development server
-* `npm run build` – Create an optimized production build
-* `npm start` – Start the production server
+- `npm run dev` – Run the development server
+- `npm run build` – Create an optimized production build
+- `npm start` – Start the production server
 
 ## Styling
 
-Styles are built with Tailwind CSS and processed by PostCSS. The
-[`postcss.config.js`](./postcss.config.js) file loads the
-`@tailwindcss/postcss` plugin along with `autoprefixer` so vendor prefixes
-are automatically applied where needed.
+Styles are built with Tailwind CSS and processed by PostCSS. The [`postcss.config.js`](./postcss.config.js) file loads the `@tailwindcss/postcss` plugin along with `autoprefixer`, so vendor prefixes are automatically applied where needed.
 
 ## Learn More
 
