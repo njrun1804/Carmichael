@@ -13,36 +13,25 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex h-[60vh] w-full items-center justify-center overflow-hidden">
-      {/* Background image */}
+    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
       <img
-        src="/hero-lifestyle.png"
-        alt="Car and patio set protected by custom‑fit covers"
+        src="/images/hero-placeholder.jpg"
+        alt="Patio chair wrapped in a sleek custom cover"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
-
-      {/* Content overlay with fade‑in and readability styles */}
-      <div className="fade-in flex flex-col items-center gap-6 text-center bg-black/40 p-6 rounded-xl">
-        <h1 className="text-4xl font-extrabold text-white md:text-6xl">
-          Premium&nbsp;Custom‑Fit&nbsp;Covers
+      <div className="fade text-center px-6">
+        <h1 className="font-serif text-4xl md:text-6xl mb-4">
+          Apparel&nbsp;for&nbsp;Your Patio&nbsp;Furniture
         </h1>
-        <p className="max-w-xl text-lg text-white/90">
-          Protect your car, grill, or patio set with precision‑tailored covers that look great and last.
+        <p className="max-w-xl mx-auto text-lg md:text-xl">
+          Tailored covers that slip on in seconds and shrug off every forecast.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href="/car"
-            className="rounded-full bg-black/80 px-6 py-3 text-white transition-colors hover:bg-black"
-          >
-            Shop Car Covers
-          </Link>
-          <Link
-            href="/grill"
-            className="rounded-full border border-white px-6 py-3 text-white transition-colors hover:bg-white/20"
-          >
-            Shop Grill Covers
-          </Link>
-        </div>
+        <a
+          href="#shop"
+          className="inline-block mt-8 rounded-full bg-terracotta px-8 py-3 font-medium text-white"
+        >
+          Design&nbsp;My&nbsp;Cover
+        </a>
       </div>
     </section>
   );

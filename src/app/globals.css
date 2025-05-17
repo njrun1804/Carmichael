@@ -67,3 +67,19 @@ body {
 .btn-outline {
   @apply rounded-full border border-white/70 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-gray-900;
 }
+
+/* Tailwind base, components, utilities
+   -------------------------------------------------------------- */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* smooth fade-in for hero + cards */
+@keyframes fade {
+  from {opacity:0; transform:translateY(20px)}
+  to   {opacity:1; transform:translateY(0)}
+}
+
+.fade       { animation: fade .6s ease-out both }
+.bg-grid    { background-image:url("/images/bg-grid.svg") }
