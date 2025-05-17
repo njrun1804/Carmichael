@@ -27,6 +27,13 @@ You can begin editing the UI by modifying files under `app/` or `src/`. The page
 * `npm run build` – Create an optimized production build
 * `npm start` – Start the production server
 
+## Styling
+
+Styles are built with Tailwind CSS and processed by PostCSS. The
+[`postcss.config.js`](./postcss.config.js) file loads the
+`@tailwindcss/postcss` plugin along with `autoprefixer` so vendor prefixes
+are automatically applied where needed.
+
 ## Learn More
 
 Visit the [Next.js documentation](https://nextjs.org/docs) to learn about additional features and API options.
