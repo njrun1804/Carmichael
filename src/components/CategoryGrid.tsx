@@ -6,7 +6,7 @@ const categories = [
 
 export default function CategoryGrid() {
   return (
-    <section className="mx-auto grid max-w-7xl gap-6 px-4 py-16 md:grid-cols-3">
+    <section className="fade-in mx-auto grid max-w-7xl gap-6 px-4 py-16 md:grid-cols-3">
       {categories.map(({ href, label, img }) => (
         <a key={label} href={href} className="group relative overflow-hidden rounded-xl shadow">
           <img src={img} alt={label} className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105" />

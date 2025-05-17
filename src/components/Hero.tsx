@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="mx-auto flex max-w-7xl flex-col items-center gap-6 bg-gray-100 py-24 text-center">
+    <section className="fade-in mx-auto flex max-w-7xl flex-col items-center gap-6 bg-gray-100 py-24 text-center">
       <h1 className="text-4xl font-extrabold md:text-6xl">
         Premium&nbsp;Custom-Fit&nbsp;Covers
       </h1>
