@@ -20,6 +20,13 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Styling
+
+Styles are built with Tailwind CSS and processed by PostCSS. The
+[`postcss.config.js`](./postcss.config.js) file loads the
+`@tailwindcss/postcss` plugin along with `autoprefixer` so vendor prefixes
+are automatically applied where needed.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
