@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /**
- * NOTE: Add the following to your global styles (e.g., `globals.css`) for the fade‑in effect:
+ * NOTE: Make sure you have the `fade-in` keyframes and utility class in your global styles (e.g., `globals.css`):
  *
  * @keyframes fade-in {
  *   from { opacity: 0; transform: translateY(20px); }
@@ -21,8 +21,8 @@ export default function Hero() {
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
 
-      {/* Content overlay with fade‑in animation */}
-      <div className="fade-in flex flex-col items-center gap-6 text-center">
+      {/* Content overlay with fade‑in and readability styles */}
+      <div className="fade-in flex flex-col items-center gap-6 text-center bg-black/40 p-6 rounded-xl">
         <h1 className="text-4xl font-extrabold text-white md:text-6xl">
           Premium&nbsp;Custom‑Fit&nbsp;Covers
         </h1>
