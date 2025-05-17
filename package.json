@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "test": "jest"
   },
   "dependencies": {
@@ -15,18 +16,18 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.7",
+    "@types/jest": "latest",
     "@types/node": "22.15.18",
     "@types/react": "19.1.4",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
     "autoprefixer": "^10.4.21",
+    "jest": "latest",
+    "jest-environment-jsdom": "latest",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.7",
-    "typescript": "5.8.3",
-    "jest": "latest",
     "ts-jest": "latest",
-    "@types/jest": "latest",
-    "@testing-library/react": "latest",
-    "@testing-library/jest-dom": "latest",
-    "@testing-library/user-event": "latest",
-    "jest-environment-jsdom": "latest"
+    "typescript": "5.8.3"
   }
 }
