@@ -50,21 +50,23 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        <section className="w-full bg-gray-100 py-24 flex flex-col items-center text-center">
-          <h1 className="font-bold text-4xl sm:text-6xl">Premium Custom-Fit Covers</h1>
-          <p className="text-gray-600 max-w-xl mt-4">
-            Protect your car and grill with durable covers tailored for a perfect fit.
+        <section className="w-full bg-gray-100 py-24 flex flex-col items-center text-center gap-6">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight">
+            Premium&nbsp;Custom-Fit&nbsp;Covers
+          </h1>
+          <p className="max-w-xl text-lg sm:text-xl text-gray-600">
+            Protect your car, grill, or patio set with precision-tailored covers that look great and last.
           </p>
-          <div className="mt-8 flex gap-4">
+          <div className="flex gap-4">
             <a
-              className="bg-black text-white px-6 py-3 font-medium hover:bg-gray-800"
               href="/car"
+              className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
             >
               Shop Car Covers
             </a>
             <a
-              className="border border-black px-6 py-3 font-medium hover:bg-gray-100"
               href="/grill"
+              className="border border-black px-6 py-3 rounded-full hover:bg-gray-100 transition-colors"
             >
               Shop Grill Covers
             </a>
