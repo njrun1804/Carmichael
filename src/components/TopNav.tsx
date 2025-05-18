@@ -21,9 +21,9 @@ export default function TopNav() {
           <Image
             src="/logo-castaway.png"
             alt="Castaway Covers"
-            width={240}
-            height={60}
-            className="h-14 w-auto max-w-[60vw]"
+            width={0}
+            height={0}
+            className="w-[240px] max-w-[70vw]"
             priority
           />
         </Link>
