@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function ConfiguratorTeaser() {
   return (
     <section className="bg-grid py-20 text-center">
