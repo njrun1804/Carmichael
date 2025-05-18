@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const gallery = [
   "/images/look1.png",
   "/images/look2.png",
@@ -11,10 +13,12 @@ export default function HomeGallery() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {gallery.map((src) => (
-            <img
+            <Image
               key={src}
               src={src}
-              alt=""
+              alt="Gallery image"
+              width={256}
+              height={256}
               className="h-64 w-64 rounded-lg object-cover shadow"
             />
           ))}

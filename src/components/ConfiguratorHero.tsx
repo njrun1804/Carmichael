@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ConfiguratorHero() {
   return (
@@ -21,9 +22,11 @@ export default function ConfiguratorHero() {
         </Link>
 
         {/* little “select your size/fabric” mock-up card */}
-        <img
+        <Image
           src="/images/size-fab-picker.png"
           alt="Select size and fabric"
+          width={500}
+          height={350}
           className="w-full max-w-sm rounded-lg shadow-lg"
         />
       </div>

@@ -1,7 +1,7 @@
 "use client";
 import { Switch } from "@headlessui/react";
-import { shallow } from "zustand/shallow";
-import { useConfig, type ConfigState } from "@/store/useConfig";
+import { useConfig } from "@/store/useConfig";
+import type { ConfigState } from "@/store/useConfig";
 
 type OptKey = "vents" | "tieDowns" | "monogram";
 const OPTIONS: { key: OptKey; label: string }[] = [

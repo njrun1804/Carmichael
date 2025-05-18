@@ -1,6 +1,5 @@
 "use client";
 import { RadioGroup } from "@headlessui/react";
-import { shallow } from "zustand/shallow";
 import { useConfig, type ConfigState } from "@/store/useConfig";
 
 type Shape = "lounge" | "club" | "adirondack" | "chaise";
