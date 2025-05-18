@@ -19,7 +19,7 @@ export default function TopNav() {
         {/* bigger 280-px logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo-castaway.png"
+            src="/logo.png"
             alt="Castaway Covers"
             width={280}
             height={70}
