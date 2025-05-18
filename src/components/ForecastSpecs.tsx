@@ -1,6 +1,6 @@
 export default function ForecastSpecs() {
   return (
-    <section className="py-24 bg-sandshell">
+    <section className="py-8 bg-sandshell">
       <div className="mx-auto max-w-3xl px-6">
         <h2 className="font-serif text-3xl md:text-4xl mb-6 text-center">
           Built for Every Forecast
