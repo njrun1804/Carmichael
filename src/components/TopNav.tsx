@@ -15,15 +15,15 @@ export default function TopNav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/95 shadow-sm backdrop-blur-md">
-      <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+      <nav className="mx-auto flex h-[150px] max-w-6xl items-center justify-between px-6">
         {/* bigger 280-px logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/logo-castaway.png"
             alt="Castaway Covers"
-            width={280}
-            height={70}
-            className="h-14 w-auto sm:h-16"
+            width={560}
+            height={140}
+            className="h-[140px] w-auto max-w-[70vw] sm:h-[120px]"
             priority
           />
         </Link>
