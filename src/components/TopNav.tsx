@@ -21,9 +21,9 @@ export default function TopNav() {
           <Image
             src="/logo.png"
             alt="Carmichael Covers"
-            width={160}
-            height={40}
-            className="h-8 w-auto sm:h-10"
+            width={240}
+            height={60}
+            className="h-12 w-auto sm:h-14"
             priority
           />
         </Link>
