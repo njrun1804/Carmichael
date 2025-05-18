@@ -1,8 +1,6 @@
 "use client";
 import { useConfig } from "@/store/useConfig";
 import { RadioGroup } from "@headlessui/react";
-import { shallow } from "zustand/shallow";
-import type { ConfigState } from "../store/useConfig";
 
 const SHAPES: { id: string; label: string }[] = [
   { id: "lounge",     label: "Lounge" },
@@ -12,18 +10,16 @@ const SHAPES: { id: string; label: string }[] = [
 ];
 
 export default function StepShape() {
-  // Use an array selector and Zustand's shallow compare to avoid infinite loops in React 19
-  const [shape, set] = useConfig(
-    s => [s.shape, s.set],
-    shallow
-  );
+  // Use stable selectors for React 19 compatibility
+  const shape = useConfig(s => s.shape);
+  const set   = useConfig(s => s.set); // set is already stable
 
   return (
     <section className="mb-8">
       <h3 className="mb-2 font-medium">1 · Pick Shape</h3>
       <RadioGroup
         value={shape}
-        onChange={(val) => (set as ConfigState["set"])("shape", val as ConfigState["shape"])}
+        onChange={(val) => (set as import("@/store/useConfig").ConfigState["set"])("shape", val)}
         className="grid grid-cols-2 gap-3"
       >
         {SHAPES.map((s) => (

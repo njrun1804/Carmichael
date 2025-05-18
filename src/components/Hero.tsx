@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 /**
@@ -13,29 +14,50 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex h-[60vh] md:h-[70vh] items-center justify-center overflow-hidden px-6 text-center">
+    <section className="relative flex h-[65vh] items-center justify-center overflow-hidden text-center">
       {/* background photo */}
-      <img
+      <Image
         src="/images/hero-placeholder.jpg"
-        alt="Patio chair wrapped in a sleek custom cover"
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        alt="Outdoor set wrapped in custom covers at sunset"
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
       />
-      {/* gradient overlay for readability */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/10 via-black/10 to-black/30" />
 
-      <div className="fade mx-auto max-w-4xl">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-4">
-          Apparel&nbsp;for&nbsp;Your Patio&nbsp;Furniture
+      {/* darker gradient for legible text */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/20" />
+
+      {/* content */}
+      <div className="relative z-10 mx-auto max-w-4xl px-6">
+        <h1 className="mb-4 font-serif text-4xl font-semibold text-white drop-shadow-sm md:text-5xl lg:text-6xl">
+          Apparel&nbsp;for&nbsp;Your&nbsp;Patio&nbsp;Furniture
         </h1>
-        <p className="mx-auto max-w-xl text-lg md:text-xl">
+
+        <p className="mx-auto max-w-xl text-lg md:text-xl text-white/90 drop-shadow">
           Tailored covers that slip on in seconds and shrug off every forecast.
         </p>
+
         <Link
           href="/configure"
-          className="inline-block mt-8 rounded-full bg-terracotta px-8 py-3 font-medium text-white hover:bg-terracotta/90"
+          className="mt-8 inline-block rounded-full border border-terracotta/70 bg-terracotta px-10 py-3
+                     font-medium text-white shadow-sm ring-terracotta/40 transition
+                     hover:bg-terracotta/90 hover:shadow-md focus-visible:outline-none
+                     focus-visible:ring-4"
         >
-          Design&nbsp;My&nbsp;Cover
+          Design My Cover
         </Link>
+      </div>
+
+      {/* watermark logo for ≥lg screens */}
+      <div className="hidden lg:block">
+        <Image
+          src="/logo.png"
+          alt="Carmichael Covers watermark"
+          width={160}
+          height={48}
+          className="absolute right-6 bottom-6 w-40 opacity-10 pointer-events-none select-none"
+        />
       </div>
     </section>
   );

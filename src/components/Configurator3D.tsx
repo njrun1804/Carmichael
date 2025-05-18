@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage, useGLTF, useTexture } from "@react-three/drei";
 import { useConfig } from "@/store/useConfig";
-import { fabricMeta } from "@/components/StepFabric";
+import { fabricMeta } from "@/lib/fabricMeta";
 import { Suspense, useMemo } from "react";
 // @ts-expect-error: DRACOLoader is not typed for import in Next.js/R3F context
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";

@@ -5,7 +5,7 @@ import StepFabric from "@/components/StepFabric";
 import StepOptions from "@/components/StepOptions";
 import { useConfig } from "@/store/useConfig";
 import { useCart } from "@/store/useCart";
-import { fabricMeta } from "@/components/StepFabric";
+import { fabricMeta } from "@/lib/fabricMeta";
 import { optCosts } from "@/components/StepOptions";
 
 export default function Sidebar() {

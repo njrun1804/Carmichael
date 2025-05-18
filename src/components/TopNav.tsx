@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "@/store/useCart";
@@ -13,20 +14,28 @@ export default function TopNav() {
   useEffect(() => setReady(true), []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-sandshell/70 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        {/* logo */}
-        <Link href="/" className="font-serif text-xl font-semibold">
-          Carmichael <span className="text-terracotta">Covers</span>
+    <header className="fixed inset-x-0 top-0 z-50 bg-white/95 shadow-sm backdrop-blur-md border-b border-gray-200">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        {/* logo – 160 px wide on desktop, scales down on mobile */}
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Carmichael Covers"
+            width={160}
+            height={40}
+            className="h-8 w-auto sm:h-10"
+            priority
+          />
         </Link>
 
         <div className="flex items-center gap-4">
           {/* CTA */}
           <Link
             href="/configure"
-            className="hidden rounded-full bg-terracotta px-5 py-2 text-sm font-medium text-white hover:bg-terracotta/90 sm:inline-block"
+            className="hidden rounded-full border border-terracotta px-5 py-2 text-sm font-medium
+                       text-terracotta transition hover:bg-terracotta hover:text-white sm:inline-block"
           >
-            Design&nbsp;My&nbsp;Cover
+            Design My Cover
           </Link>
 
           {/* cart */}

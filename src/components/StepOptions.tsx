@@ -10,13 +10,9 @@ const OPTS = [
 ] as const;
 
 export default function StepOptions() {
-  // Use array selector and shallow for stability
-  const [rawOptions, rawSet] = useConfig(
-    s => [s.options, s.set],
-    shallow
-  );
-  const options = rawOptions as { vents: boolean; tieDowns: boolean; monogram: boolean };
-  const set = rawSet as <K extends keyof import("../store/useConfig").ConfigState>(key: K, value: import("../store/useConfig").ConfigState[K]) => void;
+  // Use stable selectors for React 19 compatibility
+  const options = useConfig(s => s.options, shallow); // object – shallow OK
+  const set = useConfig(s => s.set); // set is already stable
 
   return (
     <section className="mb-8">
@@ -26,7 +22,7 @@ export default function StepOptions() {
           <Switch.Label className="text-sm">{o.label}</Switch.Label>
           <Switch
             checked={options[o.key]}
-            onChange={(val) => set("options", { ...options, [o.key]: val })}
+            onChange={(val) => (set as import("@/store/useConfig").ConfigState["set"])("options", { ...options, [o.key]: val })}
             className={`${options[o.key] ? "bg-terracotta" : "bg-gray-300"}
                        relative inline-flex h-5 w-10 items-center rounded-full`}
           >

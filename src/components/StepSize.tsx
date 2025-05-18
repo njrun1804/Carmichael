@@ -1,6 +1,5 @@
 "use client";
 import { useConfig } from "@/store/useConfig";
-import { shallow } from "zustand/shallow";
 
 const ranges = {
   width:  { min: 20, max: 48 },
@@ -9,13 +8,11 @@ const ranges = {
 };
 
 export default function StepSize() {
-  // Use array selector and shallow for stability
-  const arr = useConfig(
-    s => [s.width, s.depth, s.height, s.set],
-    shallow
-  );
-  const [width, depth, height, rawSet] = arr;
-  const set = rawSet as <K extends keyof import("../store/useConfig").ConfigState>(key: K, value: import("../store/useConfig").ConfigState[K]) => void;
+  // Use stable selectors for React 19 compatibility
+  const width  = useConfig(s => s.width);
+  const depth  = useConfig(s => s.depth);
+  const height = useConfig(s => s.height);
+  const set    = useConfig(s => s.set); // set is already stable
 
   const getValue = (dim: "width" | "depth" | "height") => {
     if (dim === "width") return width as number;
@@ -38,7 +35,7 @@ export default function StepSize() {
             min={ranges[dim].min}
             max={ranges[dim].max}
             value={getValue(dim)}
-            onChange={(e) => set(dim, Number(e.target.value))}
+            onChange={(e) => (set as import("@/store/useConfig").ConfigState["set"])(dim, Number(e.target.value))}
             className="w-full accent-terracotta"
           />
         </div>

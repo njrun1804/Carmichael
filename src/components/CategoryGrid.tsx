@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const categories = [
-  { href: "/car",   label: "Car Covers",   img: "/images/placeholder-car.png" },
-  { href: "/grill", label: "Grill Covers", img: "/images/placeholder-grill.png" },
-  { href: "/patio", label: "Patio Covers", img: "/images/placeholder-patio.png" },
+  { href: "/car",   label: "Car Covers",   img: "/placeholder-car.jpg" },
+  { href: "/grill", label: "Grill Covers", img: "/placeholder-grill.jpg" },
+  { href: "/patio", label: "Patio Covers", img: "/placeholder-patio.jpg" },
 ];
 
 export default function CategoryGrid() {
