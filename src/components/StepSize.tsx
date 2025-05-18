@@ -1,45 +1,58 @@
 "use client";
-import { useConfig } from "@/store/useConfig";
-
-const ranges = {
-  width:  { min: 20, max: 48 },
-  depth:  { min: 20, max: 48 },
-  height: { min: 24, max: 48 },
-};
+import { shallow } from "zustand/shallow";
+import { useConfig, type ConfigState } from "@/store/useConfig";
 
 export default function StepSize() {
-  // Use stable selectors for React 19 compatibility
-  const width  = useConfig(s => s.width);
-  const depth  = useConfig(s => s.depth);
-  const height = useConfig(s => s.height);
-  const set    = useConfig(s => s.set); // set is already stable
-
-  const getValue = (dim: "width" | "depth" | "height") => {
-    if (dim === "width") return width as number;
-    if (dim === "depth") return depth as number;
-    if (dim === "height") return height as number;
-    return 0;
-  };
+  // Defensive: ensure only numbers are passed to value, fallback to 36 if not
+  const [widthRaw, depthRaw, heightRaw, set] = useConfig(
+    (s) => [s.width, s.depth, s.height, s.set],
+    shallow
+  );
+  const width = typeof widthRaw === "number" ? widthRaw : 36;
+  const depth = typeof depthRaw === "number" ? depthRaw : 36;
+  const height = typeof heightRaw === "number" ? heightRaw : 36;
 
   return (
-    <section className="mb-8">
-      <h3 className="mb-2 font-medium">2 · Dial In Size (inches)</h3>
-      {(["width", "depth", "height"] as const).map((dim) => (
-        <div key={dim} className="mb-4">
-          <label className="flex justify-between text-xs mb-1 capitalize">
-            <span>{dim}</span>
-            <span>{Math.round(getValue(dim))}&quot;</span>
-          </label>
+    <>
+      <div className="mb-2 font-medium">2 · Adjust Size</div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label className="block mb-1 text-sm font-medium">Width (in)</label>
           <input
             type="range"
-            min={ranges[dim].min}
-            max={ranges[dim].max}
-            value={getValue(dim)}
-            onChange={(e) => (set as import("@/store/useConfig").ConfigState["set"])(dim, Number(e.target.value))}
-            className="w-full accent-terracotta"
+            min={20}
+            max={60}
+            value={width}
+            onChange={(e) => (set as ConfigState["set"])("width", Number(e.target.value))}
+            className="w-full"
           />
+          <div className="text-xs text-gray-500">{width} in</div>
         </div>
-      ))}
-    </section>
+        <div>
+          <label className="block mb-1 text-sm font-medium">Depth (in)</label>
+          <input
+            type="range"
+            min={20}
+            max={60}
+            value={depth}
+            onChange={(e) => (set as ConfigState["set"])("depth", Number(e.target.value))}
+            className="w-full"
+          />
+          <div className="text-xs text-gray-500">{depth} in</div>
+        </div>
+        <div>
+          <label className="block mb-1 text-sm font-medium">Height (in)</label>
+          <input
+            type="range"
+            min={20}
+            max={60}
+            value={height}
+            onChange={(e) => (set as ConfigState["set"])("height", Number(e.target.value))}
+            className="w-full"
+          />
+          <div className="text-xs text-gray-500">{height} in</div>
+        </div>
+      </div>
+    </>
   );
 }

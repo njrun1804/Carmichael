@@ -1,38 +1,44 @@
 "use client";
 import { Switch } from "@headlessui/react";
-import { useConfig } from "@/store/useConfig";
 import { shallow } from "zustand/shallow";
+import { useConfig, type ConfigState } from "@/store/useConfig";
 
-const OPTS = [
-  { key: "vents",     label: "Side Vents (+$5)" },
-  { key: "tieDowns",  label: "Tie-Down Straps (+$8)" },
-  { key: "monogram",  label: "Monogram (+$12)" },
-] as const;
+type OptKey = "vents" | "tieDowns" | "monogram";
+const OPTIONS: { key: OptKey; label: string }[] = [
+  { key: "vents", label: "Side vents" },
+  { key: "tieDowns", label: "Tie‑downs" },
+  { key: "monogram", label: "Monogram" },
+];
 
 export default function StepOptions() {
-  // Use stable selectors for React 19 compatibility
-  const options = useConfig(s => s.options, shallow); // object – shallow OK
-  const set = useConfig(s => s.set); // set is already stable
+  // Explicitly type the selector argument
+  const options = useConfig((s: ConfigState) => s.options, shallow);
+  const set = useConfig((s: ConfigState) => s.set);
 
   return (
-    <section className="mb-8">
-      <h3 className="mb-2 font-medium">4 · Add Options</h3>
-      {OPTS.map((o) => (
-        <Switch.Group key={o.key} as="div" className="mb-4 flex items-center justify-between">
-          <Switch.Label className="text-sm">{o.label}</Switch.Label>
+    <>
+      <div className="mb-2 font-medium">4 · Extras</div>
+      {OPTIONS.map(o => (
+        <div key={o.key} className="flex items-center gap-3 mb-3">
+          <span>{o.label}</span>
           <Switch
             checked={options[o.key]}
-            onChange={(val) => (set as import("@/store/useConfig").ConfigState["set"])("options", { ...options, [o.key]: val })}
-            className={`${options[o.key] ? "bg-terracotta" : "bg-gray-300"}
-                       relative inline-flex h-5 w-10 items-center rounded-full`}
+            onChange={val =>
+              (set as ConfigState["set"])("options", { ...options, [o.key]: val })
+            }
+            className={`relative inline-flex h-5 w-10 items-center rounded-full ${
+              options[o.key] ? "bg-terracotta" : "bg-gray-300"
+            }`}
           >
             <span
-              className={`${options[o.key] ? "translate-x-5" : "translate-x-1"} inline-block h-3 w-3 transform rounded-full bg-white transition`}
+              className={`inline-block h-4 w-4 transform rounded-full bg-white transition ${
+                options[o.key] ? "translate-x-5" : "translate-x-1"
+              }`}
             />
           </Switch>
-        </Switch.Group>
+        </div>
       ))}
-    </section>
+    </>
   );
 }
 
