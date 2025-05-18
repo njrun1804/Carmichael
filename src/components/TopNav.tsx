@@ -16,15 +16,16 @@ export default function TopNav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/95 shadow-sm backdrop-blur-md">
       <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
-        {/* bigger 280-px logo */}
+        {/* bigger 280-px logo, use 2x asset for sharpness */}
         <Link href="/" className="flex items-center">
           <Image
             src="/logo-castaway.png"
             alt="Castaway Covers"
-            width={0}
-            height={0}
-            className="w-[240px] max-w-[70vw]"
+            width={280}
+            height={70}
+            className="w-[280px] max-w-[70vw] h-auto"
             priority
+            sizes="(max-width: 600px) 70vw, 280px"
           />
         </Link>
 
@@ -32,14 +33,13 @@ export default function TopNav() {
           {/* CTA */}
           <Link
             href="/configure"
-            className="hidden rounded-full border border-terracotta px-6 py-2 text-sm font-medium
-                       text-terracotta transition hover:bg-terracotta hover:text-white sm:inline-block"
+            className="hidden rounded-full border border-terracotta px-6 py-2 text-sm font-medium text-terracotta transition hover:bg-terracotta hover:text-white sm:inline-block"
           >
             Design My Cover
           </Link>
 
           {/* cart */}
-          <Link href="/cart">
+          <Link href="/cart" className="relative">
             <ShoppingCart className="h-7 w-7" />
             {ready && count > 0 && (
               <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-terracotta text-xs text-white">

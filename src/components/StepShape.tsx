@@ -1,39 +1,30 @@
 "use client";
-import { useConfig } from "@/store/useConfig";
 import { RadioGroup } from "@headlessui/react";
+import { shallow } from "zustand/shallow";
+import { useConfig, type ConfigState } from "@/store/useConfig";
 
-const SHAPES: { id: string; label: string }[] = [
-  { id: "lounge",     label: "Lounge" },
-  { id: "club",       label: "Club" },
-  { id: "adirondack", label: "Adirondack" },
-  { id: "chaise",     label: "Chaise" },
-];
+type Shape = "lounge" | "club" | "adirondack" | "chaise";
+const SHAPES: Shape[] = ["lounge", "club", "adirondack", "chaise"];
 
 export default function StepShape() {
-  // Use stable selectors for React 19 compatibility
+  // Use stable selectors for each value
   const shape = useConfig(s => s.shape);
-  const set   = useConfig(s => s.set); // set is already stable
+  const set = useConfig(s => s.set);
 
   return (
-    <section className="mb-8">
-      <h3 className="mb-2 font-medium">1 · Pick Shape</h3>
+    <>
+      <div className="mb-2 font-medium">1 · Pick Shape</div>
       <RadioGroup
         value={shape}
-        onChange={(val) => (set as import("@/store/useConfig").ConfigState["set"])("shape", val)}
+        onChange={val => (set as ConfigState["set"])("shape", val as Shape)}
         className="grid grid-cols-2 gap-3"
       >
-        {SHAPES.map((s) => (
-          <RadioGroup.Option
-            key={s.id}
-            value={s.id}
-            className={({ checked }) =>
-              `rounded-lg border px-4 py-3 text-sm text-center cursor-pointer\n               ${checked ? "border-terracotta bg-sandshell" : "hover:bg-sandshell"}`
-            }
-          >
-            {s.label}
+        {SHAPES.map(s => (
+          <RadioGroup.Option key={s} value={s} className="rounded border p-2">
+            {({ checked }) => <span className={checked ? "font-semibold" : ""}>{s}</span>}
           </RadioGroup.Option>
         ))}
       </RadioGroup>
-    </section>
+    </>
   );
 }

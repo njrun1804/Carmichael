@@ -1,36 +1,44 @@
 "use client";
 import { RadioGroup } from "@headlessui/react";
 import { useConfig } from "@/store/useConfig";
-import { type Fabric } from "@/lib/fabricMeta";
+import type { ConfigState } from "@/store/useConfig";
 
+type Fabric = "poly" | "canvas" | "lux";
 const FABRICS: Fabric[] = ["poly", "canvas", "lux"];
 
+export const fabricMeta = {
+  poly: { up: 5, tex: "/textures/fabrics/poly_albedo.jpg" },
+  canvas: { up: 0, tex: "/textures/fabrics/canvas_albedo.jpg" },
+  lux: { up: -5, tex: "/textures/fabrics/lux_albedo.jpg" },
+} as const;
+
 export default function StepFabric() {
-  // Use stable selectors for React 19 compatibility
+  // Use stable selectors for each value
   const fabric = useConfig(s => s.fabric);
-  const set    = useConfig(s => s.set); // set is already stable
+  const set = useConfig(s => s.set);
 
   return (
-    <section className="mb-8">
-      <h3 className="mb-2 font-medium">3 · Choose Fabric</h3>
+    <>
+      <div className="mb-2 font-medium">3 · Choose Fabric</div>
       <RadioGroup
         value={fabric}
-        onChange={(val) => (set as import("@/store/useConfig").ConfigState["set"])("fabric", val as Fabric)}
+        onChange={val => (set as ConfigState["set"])("fabric", val as Fabric)}
         className="space-y-3"
       >
-        {FABRICS.map((f) => (
-          <RadioGroup.Option key={f} value={f}>
+        {FABRICS.map(f => (
+          <RadioGroup.Option key={f} value={f} className="flex items-center gap-3">
             {({ checked }) => (
-              <div
-                className={`flex items-center gap-3 rounded-lg border px-4 py-3
-                  ${checked ? "border-terracotta bg-sandshell" : "hover:bg-sandshell"}`}
-              >
-                <span className="flex-1 text-sm">{f}</span>
-              </div>
+              <>
+                <span
+                  className="h-6 w-6 rounded-full border"
+                  style={{ backgroundImage: `url(${fabricMeta[f].tex})` }}
+                />
+                <span className={checked ? "font-semibold" : ""}>{f}</span>
+              </>
             )}
           </RadioGroup.Option>
         ))}
       </RadioGroup>
-    </section>
+    </>
   );
 }

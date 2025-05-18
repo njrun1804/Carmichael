@@ -1,16 +1,12 @@
 "use client";
-import { shallow } from "zustand/shallow";
 import { useConfig, type ConfigState } from "@/store/useConfig";
 
 export default function StepSize() {
-  // Defensive: ensure only numbers are passed to value, fallback to 36 if not
-  const [widthRaw, depthRaw, heightRaw, set] = useConfig(
-    (s) => [s.width, s.depth, s.height, s.set],
-    shallow
-  );
-  const width = typeof widthRaw === "number" ? widthRaw : 36;
-  const depth = typeof depthRaw === "number" ? depthRaw : 36;
-  const height = typeof heightRaw === "number" ? heightRaw : 36;
+  // Use stable selectors for each value
+  const width = useConfig((s) => s.width);
+  const depth = useConfig((s) => s.depth);
+  const height = useConfig((s) => s.height);
+  const set = useConfig((s) => s.set);
 
   return (
     <>

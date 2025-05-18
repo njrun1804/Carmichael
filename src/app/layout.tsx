@@ -19,8 +19,8 @@ export default function RootLayout({
     <html lang="en" className={`${inter.className} text-charcoal`}>
       <body className="bg-sandshell antialiased min-h-screen w-full overflow-x-hidden">
         <TopNav />
-        {/* top padding matches nav height */}
-        <div className="pt-16 min-h-screen flex flex-col">
+        {/* top padding matches nav height exactly, no extra gap */}
+        <div className="pt-20 min-h-screen flex flex-col">
           {children}
         </div>
       </body>

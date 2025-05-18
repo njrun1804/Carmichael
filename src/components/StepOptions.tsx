@@ -11,9 +11,9 @@ const OPTIONS: { key: OptKey; label: string }[] = [
 ];
 
 export default function StepOptions() {
-  // Explicitly type the selector argument
-  const options = useConfig((s: ConfigState) => s.options, shallow);
-  const set = useConfig((s: ConfigState) => s.set);
+  // Use stable selectors for each value
+  const options = useConfig(s => s.options);
+  const set = useConfig(s => s.set);
 
   return (
     <>
