@@ -6,7 +6,7 @@ import TopNav from "@/components/TopNav";
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500"] });
 
 // export const metadata = {
-//   title: "Carmichael Covers",
+//   title: "Castaway Covers",
 //   description: "Premium custom-fit covers",
 // };
 

@@ -38,9 +38,9 @@ export default function ConfiguratorWizard() {
       quantity: 1,
     };
 
-    const cart: Array<Record<string, unknown>> = JSON.parse(localStorage.getItem("carmichaelCart") || "[]");
+    const cart: Array<Record<string, unknown>> = JSON.parse(localStorage.getItem("castawayCart") || "[]");
     cart.push(lineItem);
-    localStorage.setItem("carmichaelCart", JSON.stringify(cart));
+    localStorage.setItem("castawayCart", JSON.stringify(cart));
     setStep(3);
   }
 

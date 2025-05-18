@@ -3,7 +3,7 @@ export default function SiteFooter() {
     <footer className="bg-charcoal text-sandshell py-16">
       <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3 px-6">
         <div>
-          <h3 className="font-serif text-lg mb-2">Carmichael Covers</h3>
+          <h3 className="font-serif text-lg mb-2">Castaway Covers</h3>
           <p className="text-sm">Tailored protection, made in the USA.</p>
         </div>
         <div>
@@ -26,7 +26,7 @@ export default function SiteFooter() {
           </form>
         </div>
       </div>
-      <p className="text-xs text-center mt-10">© {new Date().getFullYear()} Carmichael Covers</p>
+      <p className="text-xs text-center mt-10">© {new Date().getFullYear()} Castaway Covers</p>
     </footer>
   );
 }

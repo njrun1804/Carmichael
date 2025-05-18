@@ -8,13 +8,13 @@ export default function Footer() {
         <div className="flex justify-center items-center mt-10">
           <Image
             src="/logo.png"
-            alt="Carmichael Covers"
+            alt="Castaway Covers"
             width={32}
             height={32}
             className="h-8 w-auto hidden md:inline-block mr-2"
           />
-          <p className="text-xs text-center">
-            © {new Date().getFullYear()} Carmichael Covers
+          <p className="text-xs text-center mt-10">
+            © 2025 Castaway Covers. All rights reserved.
           </p>
         </div>
         <Link href="/privacy" className="hover:underline">

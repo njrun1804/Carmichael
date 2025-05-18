@@ -18,7 +18,7 @@ export default function Hero() {
       {/* background photo */}
       <Image
         src="/images/hero-placeholder.jpg"
-        alt="Outdoor set wrapped in custom covers at sunset"
+        alt="Castaway Covers – outdoor set wrapped in custom covers at sunset"
         fill
         priority
         className="object-cover"
@@ -53,7 +53,7 @@ export default function Hero() {
       <div className="hidden lg:block">
         <Image
           src="/logo.png"
-          alt="Carmichael Covers watermark"
+          alt="Castaway Covers watermark"
           width={160}
           height={48}
           className="absolute right-6 bottom-6 w-40 opacity-10 pointer-events-none select-none"

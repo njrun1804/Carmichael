@@ -17,29 +17,29 @@ interface CartState {
 }
 
 const hydrate = (): CartItem[] =>
-  JSON.parse(localStorage.getItem("carmichaelCart") || "[]");
+  JSON.parse(localStorage.getItem("castawayCart") || "[]");
 
 export const useCart = create<CartState>((set, get) => ({
   items: [],
   add: (item) => {
     const items = [...get().items, item];
-    localStorage.setItem("carmichaelCart", JSON.stringify(items));
+    localStorage.setItem("castawayCart", JSON.stringify(items));
     set({ items });
   },
   remove: (id) => {
     const items = get().items.filter((i) => i.id !== id);
-    localStorage.setItem("carmichaelCart", JSON.stringify(items));
+    localStorage.setItem("castawayCart", JSON.stringify(items));
     set({ items });
   },
   updateQty: (id, qty) => {
     const items = get().items.map((i) =>
       i.id === id ? { ...i, quantity: qty } : i
     );
-    localStorage.setItem("carmichaelCart", JSON.stringify(items));
+    localStorage.setItem("castawayCart", JSON.stringify(items));
     set({ items });
   },
   clear: () => {
-    localStorage.removeItem("carmichaelCart");
+    localStorage.removeItem("castawayCart");
     set({ items: [] });
   },
 }));
