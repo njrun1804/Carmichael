@@ -1,6 +1,6 @@
 const imgs = [
-  "/images/look1.jpg", "/images/look2.jpg",
-  "/images/look3.jpg", "/images/look4.jpg"
+  "/images/look1.png", "/images/look2.png",
+  "/images/look3.png", "/images/look4.png"
 ];
 
 export default function Lookbook() {

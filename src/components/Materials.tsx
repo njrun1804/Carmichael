@@ -1,7 +1,7 @@
 export default function Materials() {
   return (
     <section className="py-24 bg-sandshell">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="mx-auto max-w-3xl px-6">
         <h2 className="font-serif text-3xl md:text-4xl mb-6 text-center">
           Built for Every Forecast
         </h2>
